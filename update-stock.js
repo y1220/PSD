@@ -11,13 +11,8 @@ const config = { baseUrl: 'http://localhost:8080/engine-rest', use: logger, asyn
 const client = new Client(config);
 
 // susbscribe to the topic: 'charge-card'
-client.subscribe('medical-record', async function({ task, taskService }) {
+client.subscribe('update-stock', async function({ task, taskService }) {
   // Put your business logic here
-
-  // Get a process variable
-  const pid = task.variables.get('pid');
-
-  console.log(`Select a patient with a pid of ${pid}..`);
 
   open('https://docs.camunda.org/get-started/quick-start/success');
 
